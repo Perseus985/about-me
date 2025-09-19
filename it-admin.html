@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Administration - Kevin Stellmacher</title>
+    <meta name="description" content="IT Administration expertise in mobile device management, enterprise systems, and automation">
+    <meta name="keywords" content="IT Administration, MDM, Jamf Pro, Microsoft Intune, Device Management, Enterprise IT">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: #f5f5f7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #424245;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #007aff;
+        }
+
+        .nav-links a.active {
+            color: #007aff;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1d1d1f;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #86868b;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(0, 122, 255, 0.1);
+            color: #007aff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1d1d1f;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #86868b;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+
+        .tool-card {
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tool-icon {
+            width: 140px;
+            height: 140px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-icon:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .jamf { background: linear-gradient(135deg, #4a90e2, #007aff); }
+        .intune { background: linear-gradient(135deg, #0078d4, #40e0d0); }
+        .ad { background: linear-gradient(135deg, #00bcf2, #0078d4); }
+        .powershell { background: linear-gradient(135deg, #012456, #2e5bba); }
+
+        .tool-icon svg {
+            width: 70px;
+            height: 70px;
+            fill: white;
+        }
+
+        .tool-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-description {
+            color: #86868b;
+            font-size: 0.95rem;
+        }
+
+        /* Experience Cards */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .experience-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #007aff, #0051d5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .experience-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 1rem;
+        }
+
+        .experience-description {
+            color: #424245;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .experience-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(0, 122, 255, 0.1);
+            color: #007aff;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Achievements Section */
+        .achievements {
+            background: white;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            background: #f5f5f7;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-item:hover {
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .achievement-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #007aff;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-label {
+            color: #424245;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: #f5f5f7;
+            padding: 2rem 0;
+            text-align: center;
+            color: #86868b;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 2rem;
+            }
+
+            .tool-icon {
+                width: 120px;
+                height: 120px;
+            }
+
+            .tool-icon svg {
+                width: 60px;
+                height: 60px;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .tool-icon {
+            animation: iconFloat 6s ease-in-out infinite;
+        }
+
+        .tool-icon:nth-child(1) { animation-delay: 0s; }
+        .tool-icon:nth-child(2) { animation-delay: 1.5s; }
+        .tool-icon:nth-child(3) { animation-delay: 3s; }
+        .tool-icon:nth-child(4) { animation-delay: 4.5s; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Kevin Stellmacher</a>
+            <ul class="nav-links">
+                <li><a href="/">DevOps</a></li>
+                <li><a href="/journey.html">Journey</a></li>
+                <li><a href="/it-admin.html" class="active">IT Admin</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>IT Administrator</h1>
+                <p>Enterprise device management and automation specialist</p>
+                <div class="hero-badges">
+                    <span class="badge">MDM Expert</span>
+                    <span class="badge">Automation Focus</span>
+                    <span class="badge">Enterprise Scale</span>
+                    <span class="badge">Multi-Platform</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Core Technologies</h2>
+            <p class="section-subtitle">Enterprise solutions for comprehensive device lifecycle management</p>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon jamf">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <div class="tool-name">Jamf Pro</div>
+                    <div class="tool-description">macOS & iOS Device Management</div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon intune">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9l-5.91.74L12 16l-4.09-6.26L2 9l6.91-.74L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="tool-name">Microsoft Intune</div>
+                    <div class="tool-description">Windows & Cross-Platform MDM</div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon ad">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                        </svg>
+                    </div>
+                    <div class="tool-name">Active Directory</div>
+                    <div class="tool-description">Identity & Access Management</div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon powershell">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </div>
+                    <div class="tool-name">PowerShell</div>
+                    <div class="tool-description">Automation & Scripting</div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: white;">
+            <div class="container">
+                <h2 class="section-title">IT Administration Experience</h2>
+                <p class="section-subtitle">Hands-on experience managing enterprise environments at scale</p>
+                
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <div class="experience-icon">📱</div>
+                        <h3 class="experience-title">Mobile Device Management</h3>
+                        <p class="experience-description">
+                            Managed enterprise iOS and macOS fleet using Jamf Pro, implementing automated deployment workflows, security policies, and compliance reporting. Streamlined device provisioning and maintained security standards across distributed workforce.
+                        </p>
+                        <div class="experience-tech">
+                            <span class="tech-tag">Jamf Pro</span>
+                            <span class="tech-tag">iOS Management</span>
+                            <span class="tech-tag">macOS</span>
+                            <span class="tech-tag">Policy Management</span>
+                            <span class="tech-tag">Compliance</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="experience-icon">💻</div>
+                        <h3 class="experience-title">Windows Endpoint Management</h3>
+                        <p class="experience-description">
+                            Deployed and managed Windows devices through Microsoft Intune, ensuring compliance and security across distributed workforce. Implemented automated patching, software deployment, and configuration management at enterprise scale.
+                        </p>
+                        <div class="experience-tech">
+                            <span class="tech-tag">Microsoft Intune</span>
+                            <span class="tech-tag">Windows 10/11</span>
+                            <span class="tech-tag">Azure AD</span>
+                            <span class="tech-tag">Group Policy</span>
+                            <span class="tech-tag">SCCM</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="experience-icon">⚙️</div>
+                        <h3 class="experience-title">Automation & Scripting</h3>
+                        <p class="experience-description">
+                            Created automated workflows for device provisioning, software deployment, and compliance reporting across multi-platform environments. Reduced manual processes and improved consistency through PowerShell and Bash automation.
+                        </p>
+                        <div class="experience-tech">
+                            <span class="tech-tag">PowerShell</span>
+                            <span class="tech-tag">Bash</span>
+                            <span class="tech-tag">Workflow Automation</span>
+                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">Reporting</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="experience-icon">🔒</div>
+                        <h3 class="experience-title">Security & Compliance</h3>
+                        <p class="experience-description">
+                            Implemented enterprise security policies, managed user access controls, and ensured compliance with organizational standards. Maintained detailed documentation and audit trails for regulatory requirements.
+                        </p>
+                        <div class="experience-tech">
+                            <span class="tech-tag">Security Policies</span>
+                            <span class="tech-tag">Access Control</span>
+                            <span class="tech-tag">Compliance</span>
+                            <span class="tech-tag">Audit Trails</span>
+                            <span class="tech-tag">Documentation</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="experience-icon">👥</div>
+                        <h3 class="experience-title">User Support & Training</h3>
+                        <p class="experience-description">
+                            Provided technical support for end users, created documentation for common procedures, and conducted training sessions for new system implementations. Maintained high satisfaction rates through clear communication.
+                        </p>
+                        <div class="experience-tech">
+                            <span class="tech-tag">Technical Support</span>
+                            <span class="tech-tag">User Training</span>
+                            <span class="tech-tag">Documentation</span>
+                            <span class="tech-tag">Troubleshooting</span>
+                            <span class="tech-tag">Communication</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="experience-icon">📊</div>
+                        <h3 class="experience-title">Infrastructure Monitoring</h3>
+                        <p class="experience-description">
+                            Monitored system health, tracked performance metrics, and generated reports for management. Implemented proactive monitoring solutions to prevent issues and optimize system performance across the infrastructure.
+                        </p>
+                        <div class="experience-tech">
+                            <span class="tech-tag">System Monitoring</span>
+                            <span class="tech-tag">Performance Metrics</span>
+                            <span class="tech-tag">Reporting</span>
+                            <span class="tech-tag">Alerting</span>
+                            <span class="tech-tag">Optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="achievements">
+            <div class="container">
+                <h2 class="section-title">Key Achievements</h2>
+                <p class="section-subtitle">Measurable impact in enterprise IT administration</p>
+                
+                <div class="achievements-grid">
+                    <div class="achievement-item">
+                        <div class="achievement-number">500+</div>
+                        <div class="achievement-label">Devices Managed</div>
+                    </div>
+
+                    <div class="achievement-item">
+                        <div class="achievement-number">95%</div>
+                        <div class="achievement-label">Compliance Rate</div>
+                    </div>
+
+                    <div class="achievement-item">
+                        <div class="achievement-number">50%</div>
+                        <div class="achievement-label">Reduced Manual Tasks</div>
+                    </div>
+
+                    <div class="achievement-item">
+                        <div class="achievement-number">24/7</div>
+                        <div class="achievement-label">System Monitoring</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Kevin Stellmacher. Enterprise IT administration expertise.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animations
+        document.querySelectorAll('.experience-card, .achievement-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add hover effects to tool icons
+        document.querySelectorAll('.tool-icon').forEach(icon => {
+            icon.addEventListener('mouseenter', function() {
+                this.style.animationPlayState = 'paused';
+            });
+            
+            icon.addEventListener('mouseleave', function() {
+                this.style.animationPlayState = 'running';
+            });
+        });
+    </script>
+</body>
+</html>

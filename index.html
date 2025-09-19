@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kevin Stellmacher - DevOps Engineer</title>
+    <meta name="description" content="DevOps Engineer specializing in Kubernetes, cloud-native technologies, and infrastructure automation">
+    <meta name="keywords" content="DevOps, Kubernetes, Cloud, Infrastructure, Automation, GitOps">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: #f5f5f7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #424245;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #007aff;
+        }
+
+        .nav-links a.active {
+            color: #007aff;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1d1d1f;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #86868b;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(0, 122, 255, 0.1);
+            color: #007aff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #007aff;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+            margin: 0 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 122, 255, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: #007aff;
+            border: 2px solid #007aff;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1d1d1f;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #86868b;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Apps Grid */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-icon:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .app-icon img {
+            max-width: 60%;
+            max-height: 60%;
+            object-fit: contain;
+        }
+        
+        .app-label {
+            text-align: center;
+            font-size: 0.875rem;
+            color: #1d1d1f;
+            font-weight: 500;
+        }
+
+        /* App Icon Specific Styles */
+        .kubernetes { background: linear-gradient(135deg, #326ce5, #4a90e2); }
+        .docker { background: linear-gradient(135deg, #2496ed, #0db7ed); }
+        .terraform { background: linear-gradient(135deg, #623ce4, #7b42bc); }
+        .prometheus { background: linear-gradient(135deg, #e6522c, #ff6b35); }
+        .grafana { background: linear-gradient(135deg, #f46800, #ff8c00); }
+        .gitlab { background: linear-gradient(135deg, #fc6d26, #fca326); }
+        .ansible { background: linear-gradient(135deg, #ee0000, #ff4444); }
+        .vault { background: linear-gradient(135deg, #000000, #333333); }
+        .argocd { background: linear-gradient(135deg, #ef7b4d, #ff9166); }
+        .linux { background: linear-gradient(135deg, #fcc624, #ffd700); }
+
+        .app-icon svg {
+            width: 60px;
+            height: 60px;
+            fill: white;
+        }
+
+        /* Projects */
+        .projects {
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #f5f5f7;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: #424245;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(0, 122, 255, 0.1);
+            color: #007aff;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: #f5f5f7;
+            padding: 2rem 0;
+            text-align: center;
+            color: #86868b;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+            }
+
+            .apps-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .app-icon {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        @keyframes iconLoad {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .app-icon {
+            animation: iconLoad 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .app-icon:nth-child(1) { animation-delay: 0.1s; }
+        .app-icon:nth-child(2) { animation-delay: 0.2s; }
+        .app-icon:nth-child(3) { animation-delay: 0.3s; }
+        .app-icon:nth-child(4) { animation-delay: 0.4s; }
+        .app-icon:nth-child(5) { animation-delay: 0.5s; }
+        .app-icon:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Kevin Stellmacher</a>
+            <ul class="nav-links">
+                <li><a href="/" class="active">DevOps</a></li>
+                <li><a href="/journey.html">Journey</a></li>
+                <li><a href="/it-admin.html">IT Admin</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>DevOps Engineer</h1>
+                <p>Building scalable cloud-native infrastructures with modern automation</p>
+                <div class="hero-badges">
+                    <span class="badge">Kubernetes Expert</span>
+                    <span class="badge">GitOps Advocate</span>
+                    <span class="badge">Multi-Cloud Architect</span>
+                </div>
+                <a href="/contact.html" class="cta-button">Get In Touch</a>
+                <a href="/journey.html" class="cta-button secondary">My Journey</a>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">DevOps Technologies</h2>
+            <p class="section-subtitle">Production-grade tools I use daily to build reliable systems</p>
+            
+            <div class="apps-grid">
+                <div class="app-container">
+                    <div class="app-icon kubernetes">
+                        <svg viewBox="0 0 24 24">
+                            <img src="assets/images/products/kubernetes.png" alt="Kubernetes Logo">
+                        </svg>
+                    </div>
+                    <div class="app-label">Kubernetes</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon docker">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">Docker</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon terraform">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M14.5 0L24 5.5v11L14.5 22 5 16.5v-11L14.5 0zm0 2.414L7.414 9v6l7.086 6.586L21.586 15V9L14.5 2.414z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">Terraform</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon prometheus">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">Prometheus</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon grafana">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">Grafana</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon gitlab">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 21.42l3.9-12h-7.8L12 21.42z"/>
+                            <path d="M12 21.42L8.1 9.42H3.75l8.25 12z"/>
+                            <path d="M3.75 9.42L2.4 5.1c-.2-.6.1-1.3.7-1.5.6-.2 1.3.1 1.5.7l1.35 4.12h-2.2z"/>
+                            <path d="M12 21.42l3.9-12h4.35l-8.25 12z"/>
+                            <path d="M20.25 9.42l1.35-4.32c.2-.6-.1-1.3-.7-1.5-.6-.2-1.3.1-1.5.7L18.05 9.42h2.2z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">GitLab</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon ansible">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 14.794a.6.6 0 01-.543.359h-1.043a.6.6 0 01-.543-.359L12 7.67 8.561 14.794a.6.6 0 01-.543.359H6.975a.6.6 0 01-.543-.359.6.6 0 01.055-.664l4.8-8.8a.6.6 0 01.1-.12.6.6 0 01.226-.13.6.6 0 01.274 0 .6.6 0 01.226.13.6.6 0 01.1.12l4.8 8.8a.6.6 0 01.055.664z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">Ansible</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon vault">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">Vault</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon argocd">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9l-5.91.74L12 16l-4.09-6.26L2 9l6.91-.74L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">ArgoCD</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon linux">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 0C8.5 0 5.5 2.5 5.5 6c0 1.5.5 3 1.5 4.5L7 12c0 2 1 4 3 5.5 1 .75 2 1.25 3 1.5.5.125 1 .125 1.5 0 1-.25 2-.75 3-1.5 2-1.5 3-3.5 3-5.5l-.5-1.5c1-1.5 1.5-3 1.5-4.5 0-3.5-3-6-6.5-6z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">Linux</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Real-world solutions I've built and deployed in production</p>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3 class="project-title">Multi-Cloud Logging</h3>
+                        <p class="project-description">Production-ready centralized logging solution using Loki for Kubernetes clusters across pCloudBW infrastructure with automated log aggregation and retention policies.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Loki</span>
+                            <span class="tech-tag">Grafana</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Promtail</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">GitLab Automation Suite</h3>
+                        <p class="project-description">Automated GitLab project configuration implementing conventional commits, branch protection, and compliance enforcement via API with custom policy templates.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">GitLab API</span>
+                            <span class="tech-tag">Bash</span>
+                            <span class="tech-tag">Ansible</span>
+                            <span class="tech-tag">CI/CD</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">Backup & Recovery Automation</h3>
+                        <p class="project-description">Velero-based persistent volume backup and restore solution with automated testing, cross-region replication, and disaster recovery procedures.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Velero</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">S3</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">Infrastructure as Code</h3>
+                        <p class="project-description">Reusable Terraform/OpenTofu modules for VMware Aria Automation and cloud infrastructure provisioning with standardized compliance patterns.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Terraform</span>
+                            <span class="tech-tag">OpenTofu</span>
+                            <span class="tech-tag">VMware Aria</span>
+                            <span class="tech-tag">IaC</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">GitOps CI/CD Pipeline</h3>
+                        <p class="project-description">GitLab runners deployment in VPC environment using Podman, enabling secure CI/CD workflows with automated security scanning and compliance checks.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">GitLab CI/CD</span>
+                            <span class="tech-tag">Podman</span>
+                            <span class="tech-tag">GitOps</span>
+                            <span class="tech-tag">Security</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">Monitoring & Observability</h3>
+                        <p class="project-description">Production Prometheus and Grafana setup with custom dashboards, alerting rules, OAuth integration, and automated incident response workflows.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Prometheus</span>
+                            <span class="tech-tag">Grafana</span>
+                            <span class="tech-tag">OAuth</span>
+                            <span class="tech-tag">Alerting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Kevin Stellmacher. Built with modern web technologies.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animations
+        document.querySelectorAll('.project-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
