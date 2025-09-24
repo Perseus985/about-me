@@ -17,8 +17,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #1d1d1f;
-            background: #f5f5f7;
+            color: #f5f5f7;
+            background: #1d1d1f;
             overflow-x: hidden;
         }
 
@@ -33,11 +33,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(29, 29, 31, 0.9);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         nav {
@@ -52,7 +52,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 600;
-            color: #1d1d1f;
+            color: #f5f5f7;
             text-decoration: none;
         }
 
@@ -63,7 +63,7 @@
         }
 
         .nav-links a {
-            color: #424245;
+            color: #a1a1a6;
             text-decoration: none;
             font-weight: 400;
             transition: color 0.3s ease;
@@ -85,7 +85,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+            background: linear-gradient(135deg, #1d1d1f 0%, #2d2d30 100%);
             padding-top: 80px;
         }
 
@@ -97,13 +97,13 @@
             font-size: clamp(3rem, 6vw, 5rem);
             font-weight: 700;
             margin-bottom: 1.5rem;
-            color: #1d1d1f;
+            color: #f5f5f7;
             letter-spacing: -0.02em;
         }
 
         .hero p {
             font-size: 1.5rem;
-            color: #86868b;
+            color: #a1a1a6;
             margin-bottom: 3rem;
             font-weight: 400;
         }
@@ -160,14 +160,14 @@
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: #1d1d1f;
+            color: #f5f5f7;
             letter-spacing: -0.02em;
         }
 
         .section-subtitle {
             text-align: center;
             font-size: 1.25rem;
-            color: #86868b;
+            color: #a1a1a6;
             margin-bottom: 4rem;
             max-width: 600px;
             margin-left: auto;
@@ -213,12 +213,12 @@
         .app-label {
             text-align: center;
             font-size: 0.875rem;
-            color: #1d1d1f;
+            color: #f5f5f7;
             font-weight: 500;
         }
 
         /* App Icon Specific Styles */
-        .kubernetes { background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(245, 245, 247, 0.2)); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .kubernetes { background: linear-gradient(135deg, rgba(29, 29, 31, 0.8), rgba(45, 45, 48, 0.6)); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
         .docker { background: linear-gradient(135deg, #2496ed, #0db7ed); }
         .terraform { background: linear-gradient(135deg, #623ce4, #7b42bc); }
         .prometheus { background: linear-gradient(135deg, #e6522c, #ff6b35); }
@@ -237,7 +237,7 @@
 
         /* Projects */
         .projects {
-            background: white;
+            background: #2d2d30;
         }
 
         .projects-grid {
@@ -247,29 +247,29 @@
         }
 
         .project-card {
-            background: #f5f5f7;
+            background: #1d1d1f;
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            background: white;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            background: #2d2d30;
         }
 
         .project-title {
             font-size: 1.5rem;
             font-weight: 600;
-            color: #1d1d1f;
+            color: #f5f5f7;
             margin-bottom: 1rem;
         }
 
         .project-description {
-            color: #424245;
+            color: #a1a1a6;
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
@@ -291,11 +291,11 @@
 
         /* Footer */
         footer {
-            background: #f5f5f7;
+            background: #1d1d1f;
             padding: 2rem 0;
             text-align: center;
-            color: #86868b;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #a1a1a6;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Responsive */
@@ -397,36 +397,28 @@
             <div class="apps-grid">
                 <div class="app-container">
                     <div class="app-icon kubernetes">
-                        <svg viewBox="0 0 24 24">
-                            <img src="assets/images/products/kubernetes.png" alt="Kubernetes Logo">
-                        </svg>
+                        <img src="assets/images/products/kubernetes.png" alt="Kubernetes Logo">
                     </div>
                     <div class="app-label">Kubernetes</div>
                 </div>
 
                 <div class="app-container">
                     <div class="app-icon docker">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185"/>
-                        </svg>
+                        <img src="assets/images/products/podman.png" alt="Podman Logo">
                     </div>
-                    <div class="app-label">Docker</div>
+                    <div class="app-label">Podman</div>
                 </div>
 
                 <div class="app-container">
                     <div class="app-icon terraform">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M14.5 0L24 5.5v11L14.5 22 5 16.5v-11L14.5 0zm0 2.414L7.414 9v6l7.086 6.586L21.586 15V9L14.5 2.414z"/>
-                        </svg>
+                        <img src="assets/images/products/terraform.png" alt="Terraform Logo">
                     </div>
                     <div class="app-label">Terraform</div>
                 </div>
 
                 <div class="app-container">
                     <div class="app-icon prometheus">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
-                        </svg>
+                        <img src="assets/images/products/promethues-io.png" alt="Prometheus Logo">
                     </div>
                     <div class="app-label">Prometheus</div>
                 </div>
@@ -442,13 +434,7 @@
 
                 <div class="app-container">
                     <div class="app-icon gitlab">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 21.42l3.9-12h-7.8L12 21.42z"/>
-                            <path d="M12 21.42L8.1 9.42H3.75l8.25 12z"/>
-                            <path d="M3.75 9.42L2.4 5.1c-.2-.6.1-1.3.7-1.5.6-.2 1.3.1 1.5.7l1.35 4.12h-2.2z"/>
-                            <path d="M12 21.42l3.9-12h4.35l-8.25 12z"/>
-                            <path d="M20.25 9.42l1.35-4.32c.2-.6-.1-1.3-.7-1.5-.6-.2-1.3.1-1.5.7L18.05 9.42h2.2z"/>
-                        </svg>
+                        <img src="assets/images/products/gitlab.png" alt="GitLab Logo">
                     </div>
                     <div class="app-label">GitLab</div>
                 </div>
