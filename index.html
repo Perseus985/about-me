@@ -85,7 +85,10 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, #1d1d1f 0%, #2d2d30 100%);
+            background: linear-gradient(135deg, rgba(29, 29, 31, 0.8) 0%, rgba(45, 45, 48, 0.8) 100%), url('assets/images/profile/wall.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             padding-top: 80px;
         }
 
@@ -228,6 +231,14 @@
         .vault { background: linear-gradient(135deg, rgba(45, 45, 48, 0.8), rgba(60, 60, 63, 0.6)); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
         .argocd { background: linear-gradient(135deg, rgba(45, 45, 48, 0.8), rgba(60, 60, 63, 0.6)); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
         .linux { background: linear-gradient(135deg, rgba(45, 45, 48, 0.8), rgba(60, 60, 63, 0.6)); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .nexus { background: linear-gradient(135deg, rgba(45, 45, 48, 0.8), rgba(60, 60, 63, 0.6)); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .minio { background: linear-gradient(135deg, rgba(45, 45, 48, 0.8), rgba(60, 60, 63, 0.6)); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .velero { background: linear-gradient(135deg, rgba(45, 45, 48, 0.8), rgba(60, 60, 63, 0.6)); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .loki { background: linear-gradient(135deg, rgba(45, 45, 48, 0.8), rgba(60, 60, 63, 0.6)); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .alloy { background: linear-gradient(135deg, rgba(45, 45, 48, 0.8), rgba(60, 60, 63, 0.6)); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .crossplane { background: linear-gradient(135deg, rgba(45, 45, 48, 0.8), rgba(60, 60, 63, 0.6)); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .kcp { background: linear-gradient(135deg, rgba(45, 45, 48, 0.8), rgba(60, 60, 63, 0.6)); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .kyverno { background: linear-gradient(135deg, rgba(45, 45, 48, 0.8), rgba(60, 60, 63, 0.6)); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
 
         .app-icon svg {
             width: 60px;
@@ -381,7 +392,7 @@
                 <h1>DevOps Engineer</h1>
                 <p>Building scalable cloud-native infrastructures with modern automation</p>
                 <div class="hero-badges">
-                    <span class="badge">Kubernetes Expert</span>
+                    <span class="badge">Kubernetes Associate</span>
                     <span class="badge">GitOps Advocate</span>
                     <span class="badge">Multi-Cloud Architect</span>
                 </div>
@@ -464,6 +475,78 @@
                     </div>
                     <div class="app-label">Linux</div>
                 </div>
+
+                <div class="app-container">
+                    <div class="app-icon nexus">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">Nexus Repository</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon minio">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">MinIO</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon velero">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">Velero</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon loki">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9l-5.91.74L12 16l-4.09-6.26L2 9l6.91-.74L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">Loki</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon alloy">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">Grafana Alloy</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon crossplane">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9l-5.91.74L12 16l-4.09-6.26L2 9l6.91-.74L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">Crossplane (soon)</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon kcp">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9l-5.91.74L12 16l-4.09-6.26L2 9l6.91-.74L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">kcp (soon)</div>
+                </div>
+
+                <div class="app-container">
+                    <div class="app-icon kyverno">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                        </svg>
+                    </div>
+                    <div class="app-label">Kyverno (soon)</div>
+                </div>
             </div>
         </section>
 
@@ -475,7 +558,7 @@
                 <div class="projects-grid">
                     <div class="project-card">
                         <h3 class="project-title">Multi-Cloud Logging</h3>
-                        <p class="project-description">Production-ready centralized logging solution using Loki for Kubernetes clusters across pCloudBW infrastructure with automated log aggregation and retention policies.</p>
+                        <p class="project-description">Production-ready centralized logging solution using Loki for Kubernetes clusters across multiple cloud stacks with automated log aggregation and retention policies.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Loki</span>
                             <span class="tech-tag">Grafana</span>
@@ -485,7 +568,7 @@
                     </div>
 
                     <div class="project-card">
-                        <h3 class="project-title">GitLab Automation Suite</h3>
+                        <h3 class="project-title">GitLab Autoconfigure</h3>
                         <p class="project-description">Automated GitLab project configuration implementing conventional commits, branch protection, and compliance enforcement via API with custom policy templates.</p>
                         <div class="project-tech">
                             <span class="tech-tag">GitLab API</span>
@@ -508,11 +591,11 @@
 
                     <div class="project-card">
                         <h3 class="project-title">Infrastructure as Code</h3>
-                        <p class="project-description">Reusable Terraform/OpenTofu modules for VMware Aria Automation and cloud infrastructure provisioning with standardized compliance patterns.</p>
+                        <p class="project-description">Reusable Terraform/OpenTofu modules for cloud infrastructure provisioning with standardized compliance patterns and automated deployments.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Terraform</span>
                             <span class="tech-tag">OpenTofu</span>
-                            <span class="tech-tag">VMware Aria</span>
+                            <span class="tech-tag">Cloud Infrastructure</span>
                             <span class="tech-tag">IaC</span>
                         </div>
                     </div>
